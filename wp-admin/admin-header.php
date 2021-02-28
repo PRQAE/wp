@@ -19,7 +19,6 @@ if ( ! defined( 'WP_ADMIN' ) ) {
  * @global WP_Screen $current_screen     WordPress current screen object.
  * @global WP_Locale $wp_locale          WordPress date and time locale object.
  * @global string    $pagenow
- * @global string    $wp_version
  * @global string    $update_title
  * @global int       $total_update_count
  * @global string    $parent_file
@@ -42,7 +41,7 @@ if ( is_network_admin() ) {
 	/* translators: User dashboard screen title. %s: Network title. */
 	$admin_title = sprintf( __( 'User Dashboard: %s' ), get_network()->site_name );
 } else {
- 	$admin_title = get_bloginfo( 'name' );
+	$admin_title = get_bloginfo( 'name' );
 }
 
 if ( $admin_title === $title ) {
@@ -50,7 +49,7 @@ if ( $admin_title === $title ) {
 	$admin_title = sprintf( __( '%s &#8212; WordPress' ), $title );
 } else {
 	/* translators: Admin screen title. 1: Admin screen name, 2: Network or site name. */
- 	$admin_title = sprintf( __( '%1$s &lsaquo; %2$s &#8212; WordPress' ), $title, $admin_title );
+	$admin_title = sprintf( __( '%1$s &lsaquo; %2$s &#8212; WordPress' ), $title, $admin_title );
 }
 
 if ( wp_is_recovery_mode() ) {

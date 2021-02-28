@@ -5,10 +5,6 @@
  * @package WordPress
  */
 
-function mssql_escape( $string ) {
-	return str_replace( "'", "''", $string );
-}
-
 require ABSPATH . WPINC . '/option.php';
 
 /**
@@ -33,11 +29,8 @@ require ABSPATH . WPINC . '/option.php';
  */
 function mysql2date( $format, $date, $translate = true ) {
 	if ( empty( $date ) ) {
- 		return false;
+		return false;
 	}
-
-	if( is_object( $date ) && get_class( $date ) == 'DateTime' )
-		$date = $date->gettimestamp();
 
 	$datetime = date_create( $date, wp_timezone() );
 
@@ -110,7 +103,7 @@ function current_datetime() {
  *
  * @since 5.3.0
  *
- * @return string PHP timezone string or a ┬▒HH:MM offset.
+ * @return string PHP timezone string or a ±HH:MM offset.
  */
 function wp_timezone_string() {
 	$timezone_string = get_option( 'timezone_string' );
@@ -134,7 +127,7 @@ function wp_timezone_string() {
 /**
  * Retrieves the timezone from site settings as a `DateTimeZone` object.
  *
- * Timezone can be based on a PHP timezone string or a ┬▒HH:MM offset.
+ * Timezone can be based on a PHP timezone string or a ±HH:MM offset.
  *
  * @since 5.3.0
  *
@@ -334,11 +327,6 @@ function wp_maybe_decline_date( $date, $format = '' ) {
 		return $date;
 	}
 
-	// i18n functions are not available in SHORTINIT mode
-	if ( ! function_exists( '_x' ) ) {
-		return $date;
-	}
-
 	/*
 	 * translators: If months in your language require a genitive case,
 	 * translate this to 'on'. Do not translate into your own language.
@@ -384,7 +372,7 @@ function wp_maybe_decline_date( $date, $format = '' ) {
 
 		if ( $decline ) {
 			foreach ( $months as $key => $month ) {
-				$months[ $key ] = '#\b' . preg_quote( $month, '#' ) . ' (\d{1,2})(st|nd|rd|th)?([-ΓÇô]\d{1,2})?(st|nd|rd|th)?\b#u';
+				$months[ $key ] = '#\b' . preg_quote( $month, '#' ) . ' (\d{1,2})(st|nd|rd|th)?([-–]\d{1,2})?(st|nd|rd|th)?\b#u';
 			}
 
 			foreach ( $months_genitive as $key => $month ) {
@@ -608,7 +596,7 @@ function get_weekstartend( $mysqlstring, $start_of_week = '' ) {
  */
 function maybe_serialize( $data ) {
 	if ( is_array( $data ) || is_object( $data ) ) {
-		return str_replace("\0","~[NULL]~", serialize( $data ));
+		return serialize( $data );
 	}
 
 	/*
@@ -617,7 +605,7 @@ function maybe_serialize( $data ) {
 	 * Also the world will end. See WP 3.6.1.
 	 */
 	if ( is_serialized( $data, false ) ) {
-		return str_replace("\0","~[NULL]~", serialize( $data ));
+		return serialize( $data );
 	}
 
 	return $data;
@@ -633,7 +621,7 @@ function maybe_serialize( $data ) {
  */
 function maybe_unserialize( $data ) {
 	if ( is_serialized( $data ) ) { // Don't attempt to unserialize data that wasn't serialized going in.
-		return @unserialize( str_replace("~[NULL]~","\0", $data) );
+		return @unserialize( trim( $data ) );
 	}
 
 	return $data;
@@ -818,7 +806,7 @@ function wp_extract_urls( $content ) {
 			. '(?:'
 				. '\([\w\d]+\)|'
 				. '(?:'
- 					. "[^`!()\[\]{};:'\".,<>┬½┬╗ΓÇ£ΓÇ¥ΓÇÿΓÇÖ\s]|"
+					. "[^`!()\[\]{};:'\".,<>«»“”‘’\s]|"
 					. '(?:[:]\d+)?/?'
 				. ')+'
 			. ')'
@@ -1727,7 +1715,7 @@ function is_blog_installed() {
 	 * cached, oh well.
 	 */
 	if ( wp_cache_get( 'is_blog_installed' ) ) {
- 		return true;
+		return true;
 	}
 
 	$suppress = $wpdb->suppress_errors();
@@ -1736,9 +1724,9 @@ function is_blog_installed() {
 	}
 	// If siteurl is not set to autoload, check it specifically.
 	if ( ! isset( $alloptions['siteurl'] ) ) {
-		$installed = $wpdb->get_var( "SELECT option_value FROM [$wpdb->options] WHERE option_name = 'siteurl'" );
+		$installed = $wpdb->get_var( "SELECT option_value FROM $wpdb->options WHERE option_name = 'siteurl'" );
 	} else {
- 		$installed = $alloptions['siteurl'];
+		$installed = $alloptions['siteurl'];
 	}
 	$wpdb->suppress_errors( $suppress );
 
@@ -1746,12 +1734,12 @@ function is_blog_installed() {
 	wp_cache_set( 'is_blog_installed', $installed );
 
 	if ( $installed ) {
- 		return true;
+		return true;
 	}
 
 	// If visiting repair.php, return true and let it take over.
 	if ( defined( 'WP_REPAIRING' ) ) {
- 		return true;
+		return true;
 	}
 
 	$suppress = $wpdb->suppress_errors();
@@ -1771,7 +1759,7 @@ function is_blog_installed() {
 			continue;
 		}
 
-		$described_table = $wpdb->get_results( "exec sp_columns '$table'" );
+		$described_table = $wpdb->get_results( "DESCRIBE $table;" );
 		if (
 			( ! $described_table && empty( $wpdb->last_error ) ) ||
 			( is_array( $described_table ) && 0 === count( $described_table ) )
@@ -5758,7 +5746,7 @@ function is_site_meta_supported() {
 
 	$supported = get_network_option( $network_id, 'site_meta_supported', false );
 	if ( false === $supported ) {
-		$supported = $wpdb->get_var( "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME LIKE '{$wpdb->blogmeta}'" ) ? 1 : 0;
+		$supported = $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->blogmeta}'" ) ? 1 : 0;
 
 		update_network_option( $network_id, 'site_meta_supported', $supported );
 	}
@@ -6268,22 +6256,19 @@ function send_nosniff_header() {
  * @return string SQL clause.
  */
 function _wp_mysql_week( $column ) {
-	global $wpdb;
-
 	$start_of_week = (int) get_option( 'start_of_week' );
 	switch ( $start_of_week ) {
-		case 1 :
-		case 2 :
-		case 3 :
-		case 4 :
-		case 5 :
-		case 6 :
-			sqlsrv_query( $wpdb->dbh, "SET DATEFIRST $start_of_week" );
-			return "DATEPART( wk, $column )";
-		case 0 :
-		default :
-			sqlsrv_query( $wpdb->dbh, "SET DATEFIRST 7" );
-			return "DATEPART( wk, $column )";
+		case 1:
+			return "WEEK( $column, 1 )";
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			return "WEEK( DATE_SUB( $column, INTERVAL $start_of_week DAY ), 0 )";
+		case 0:
+		default:
+			return "WEEK( $column, 0 )";
 	}
 }
 
@@ -7301,7 +7286,7 @@ function wp_privacy_anonymize_data( $type, $data = '' ) {
 			$anonymous = wp_privacy_anonymize_ip( $data );
 			break;
 		case 'date':
-			$anonymous = '0001-01-01 00:00:00';
+			$anonymous = '0000-00-00 00:00:00';
 			break;
 		case 'text':
 			/* translators: Deleted text. */

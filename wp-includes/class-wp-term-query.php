@@ -567,13 +567,10 @@ class WP_Term_Query {
 
 		// Don't limit the query results when we have to descend the family tree.
 		if ( $number && ! $hierarchical && ! $child_of && '' === $parent ) {
-		    // Disable LIMIT when no ORDER BY
-		    if ( ! $orderby ) {
-			    $limits = '';
-		    } elseif ( ! empty( $number ) ) {
-				$limits = 'OFFSET ' . $offset . ' ROWS FETCH NEXT ' . $number . ' ROWS ONLY';
+			if ( $offset ) {
+				$limits = 'LIMIT ' . $offset . ',' . $number;
 			} else {
-				$limits = 'OFFSET 0 ROWS FETCH NEXT ' . $number . ' ROWS ONLY';
+				$limits = 'LIMIT ' . $number;
 			}
 		} else {
 			$limits = '';
@@ -619,8 +616,8 @@ class WP_Term_Query {
 				break;
 			case 'count':
 				$orderby = '';
-				$order = '';
-				$selects = array( 'COUNT(*) as qty' );
+				$order   = '';
+				$selects = array( 'COUNT(*)' );
 				break;
 			case 'id=>name':
 				$selects = array( 't.term_id', 't.name', 'tt.parent', 'tt.count', 'tt.taxonomy' );
@@ -958,7 +955,7 @@ class WP_Term_Query {
 				break;
 
 			case 'meta_value_num':
-				$orderby = "CAST({$primary_meta_query['alias']}.meta_value as numeric)";
+				$orderby = "{$primary_meta_query['alias']}.meta_value+0";
 				break;
 
 			default:

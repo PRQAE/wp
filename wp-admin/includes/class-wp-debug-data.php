@@ -809,7 +809,6 @@ class WP_Debug_Data {
 			$extension = null;
 		}
 
-		 /*
 		$server = $wpdb->get_var( 'SELECT VERSION()' );
 
 		if ( isset( $wpdb->use_mysqli ) && $wpdb->use_mysqli ) {
@@ -822,7 +821,7 @@ class WP_Debug_Data {
 				$client_version = null;
 			}
 		}
-		*/
+
 		$info['wp-database']['fields']['extension'] = array(
 			'label' => __( 'Extension' ),
 			'value' => $extension,

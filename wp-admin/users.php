@@ -253,9 +253,9 @@ switch ( $wp_list_table->current_action() ) {
 		$users_have_content = (bool) apply_filters( 'users_have_additional_content', false, $userids );
 
 		if ( $userids && ! $users_have_content ) {
-			if ( $wpdb->get_var( "SELECT TOP 1 ID FROM {$wpdb->posts} WHERE post_author IN( " . implode( ',', $userids ) . ' )' ) ) {
+			if ( $wpdb->get_var( "SELECT ID FROM {$wpdb->posts} WHERE post_author IN( " . implode( ',', $userids ) . ' ) LIMIT 1' ) ) {
 				$users_have_content = true;
-			} elseif ( $wpdb->get_var( "SELECT TOP 1 link_id FROM {$wpdb->links} WHERE link_owner IN( " . implode( ',', $userids ) . ' )' ) ) {
+			} elseif ( $wpdb->get_var( "SELECT link_id FROM {$wpdb->links} WHERE link_owner IN( " . implode( ',', $userids ) . ' ) LIMIT 1' ) ) {
 				$users_have_content = true;
 			}
 		}
@@ -279,9 +279,9 @@ switch ( $wp_list_table->current_action() ) {
 		<?php endif; ?>
 
 		<?php if ( 1 === count( $all_userids ) ) : ?>
- 	<p><?php _e( 'You have specified this user for deletion:' ); ?></p>
+	<p><?php _e( 'You have specified this user for deletion:' ); ?></p>
 		<?php else : ?>
- 	<p><?php _e( 'You have specified these users for deletion:' ); ?></p>
+	<p><?php _e( 'You have specified these users for deletion:' ); ?></p>
 		<?php endif; ?>
 
 <ul>
@@ -416,9 +416,9 @@ switch ( $wp_list_table->current_action() ) {
 <h1><?php _e( 'Remove Users from Site' ); ?></h1>
 
 		<?php if ( 1 === count( $userids ) ) : ?>
- 	<p><?php _e( 'You have specified this user for removal:' ); ?></p>
+	<p><?php _e( 'You have specified this user for removal:' ); ?></p>
 		<?php else : ?>
- 	<p><?php _e( 'You have specified these users for removal:' ); ?></p>
+	<p><?php _e( 'You have specified these users for removal:' ); ?></p>
 		<?php endif; ?>
 
 <ul>

@@ -1583,7 +1583,7 @@ function utf8_uri_encode( $utf8_string, $length = 0 ) {
  */
 function remove_accents( $string ) {
 	if ( ! preg_match( '/[\x80-\xff]/', $string ) ) {
- 		return $string;
+		return $string;
 	}
 
 	if ( seems_utf8( $string ) ) {
@@ -1987,7 +1987,7 @@ function sanitize_file_name( $filename ) {
 	$filename_raw = $filename;
 	$filename     = remove_accents( $filename );
 
-	$special_chars = array( '?', '[', ']', '/', '\\', '=', '<', '>', ':', ';', ',', "'", '"', '&', '$', '#', '*', '(', ')', '|', '~', '`', '!', '{', '}', '%', '+', 'ΓÇÖ', '┬½', '┬╗', 'ΓÇ¥', 'ΓÇ£', chr( 0 ) );
+	$special_chars = array( '?', '[', ']', '/', '\\', '=', '<', '>', ':', ';', ',', "'", '"', '&', '$', '#', '*', '(', ')', '|', '~', '`', '!', '{', '}', '%', '+', '’', '«', '»', '”', '“', chr( 0 ) );
 
 	// Check for support for utf8 in the installed PCRE library once and store the result in a static.
 	static $utf8_pcre = null;

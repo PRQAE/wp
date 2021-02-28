@@ -188,7 +188,6 @@ class WP_Site_Health {
 	 * @global wpdb $wpdb WordPress database abstraction object.
 	 */
 	private function prepare_sql_data() {
-		return;
 		global $wpdb;
 
 		if ( $wpdb->use_mysqli ) {
@@ -469,7 +468,7 @@ class WP_Site_Health {
 	/**
 	 * Test if themes are outdated, or unnecessary.
 	 *
-	 * ╨íhecks if your site has a default theme (to fall back on if there is a need),
+	 * Сhecks if your site has a default theme (to fall back on if there is a need),
 	 * if your themes are up to date and, finally, encourages you to remove any themes
 	 * that are not needed.
 	 *
@@ -1234,7 +1233,6 @@ class WP_Site_Health {
 	 * @return array The test results.
 	 */
 	public function get_test_utf8mb4_support() {
-		return;
 		global $wpdb;
 
 		if ( ! $this->mysql_server_version ) {
