@@ -32,11 +32,13 @@ global $hook_suffix;
 	?>
 	<p id="footer-left" class="alignleft">
 		<?php
+		// PN: Mod Start
 		$text = sprintf(
 			/* translators: %s: https://wordpress.org/ */
-			__( 'Thank you for creating with <a href="%s">WordPress</a>.' ),
-			__( 'https://wordpress.org/' )
+			__( 'Project Nami is made possible by <a href="%s">our patrons and sponsors</a>.' ),
+			__( 'https://projectnami.org/contribute/' )
 		);
+		// PN: Mod End
 
 		/**
 		 * Filters the "Thank you" text displayed in the admin footer.

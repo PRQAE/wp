@@ -247,12 +247,8 @@ class WP_User_Query {
 			$this->query_fields = "$wpdb->users.ID";
 		}
 
-		if ( isset( $qv['count_total'] ) && $qv['count_total'] ) {
-			$this->query_fields = 'SQL_CALC_FOUND_ROWS ' . $this->query_fields;
-		}
-
-		$this->query_from  = "FROM $wpdb->users";
-		$this->query_where = 'WHERE 1=1';
+		$this->query_from = "FROM $wpdb->users";
+		$this->query_where = "WHERE 1=1";
 
 		// Parse and sanitize 'include', for use by 'orderby' as well as 'include' below.
 		if ( ! empty( $qv['include'] ) ) {
@@ -491,9 +487,9 @@ class WP_User_Query {
 		// Limit.
 		if ( isset( $qv['number'] ) && $qv['number'] > 0 ) {
 			if ( $qv['offset'] ) {
-				$this->query_limit = $wpdb->prepare( 'LIMIT %d, %d', $qv['offset'], $qv['number'] );
+				$this->query_limit = $wpdb->prepare("OFFSET %d ROWS FETCH NEXT %d ROWS ONLY", $qv['offset'], $qv['number']);
 			} else {
-				$this->query_limit = $wpdb->prepare( 'LIMIT %d, %d', $qv['number'] * ( $qv['paged'] - 1 ), $qv['number'] );
+				$this->query_limit = $wpdb->prepare("OFFSET %d ROWS FETCH NEXT %d ROWS ONLY", $qv['number'] * ( $qv['paged'] - 1 ), $qv['number']);
 			}
 		}
 
@@ -592,62 +588,37 @@ class WP_User_Query {
 
 		$qv =& $this->query_vars;
 
+		$wpdb->query( "SELECT COUNT(*) as [found_rows] $this->query_from $this->query_where" );
+
+		$this->request = "SELECT $this->query_fields $this->query_from $this->query_where $this->query_orderby $this->query_limit";
+
+		if ( is_array( $qv['fields'] ) || 'all' === $qv['fields'] ) {
+			$this->results = $wpdb->get_results( $this->request );
+		} else {
+			$this->results = $wpdb->get_col( $this->request );
+		}
+
 		/**
-		 * Filters the users array before the query takes place.
+		 * Filters SELECT FOUND_ROWS() query for the current WP_User_Query instance.
 		 *
-		 * Return a non-null value to bypass WordPress' default user queries.
+		 * @since 3.2.0
 		 *
-		 * Filtering functions that require pagination information are encouraged to set
-		 * the `total_users` property of the WP_User_Query object, passed to the filter
-		 * by reference. If WP_User_Query does not perform a database query, it will not
-		 * have enough information to generate these values itself.
+		 * @global wpdb $wpdb WordPress database abstraction object.
 		 *
-		 * @since 5.1.0
-		 *
-		 * @param array|null $results Return an array of user data to short-circuit WP's user query
-		 *                            or null to allow WP to run its normal queries.
-		 * @param WP_User_Query $this The WP_User_Query instance (passed by reference).
+		 * @param string $sql The SELECT FOUND_ROWS() query for the current WP_User_Query.
 		 */
-		$this->results = apply_filters_ref_array( 'users_pre_query', array( null, &$this ) );
+		if ( isset( $qv['count_total'] ) && $qv['count_total'] )
+			$this->total_users = $wpdb->last_query_total_rows;
 
-		if ( null === $this->results ) {
-			$this->request = "SELECT $this->query_fields $this->query_from $this->query_where $this->query_orderby $this->query_limit";
-
-			if ( is_array( $qv['fields'] ) || 'all' === $qv['fields'] ) {
-				$this->results = $wpdb->get_results( $this->request );
-			} else {
-				$this->results = $wpdb->get_col( $this->request );
-			}
-
-			if ( isset( $qv['count_total'] ) && $qv['count_total'] ) {
-				/**
-				 * Filters SELECT FOUND_ROWS() query for the current WP_User_Query instance.
-				 *
-				 * @since 3.2.0
-				 * @since 5.1.0 Added the `$this` parameter.
-				 *
-				 * @global wpdb $wpdb WordPress database abstraction object.
-				 *
-				 * @param string $sql         The SELECT FOUND_ROWS() query for the current WP_User_Query.
-				 * @param WP_User_Query $this The current WP_User_Query instance.
-				 */
-				$found_users_query = apply_filters( 'found_users_query', 'SELECT FOUND_ROWS()', $this );
-
-				$this->total_users = (int) $wpdb->get_var( $found_users_query );
-			}
-		}
-
-		if ( ! $this->results ) {
+		if ( !$this->results )
 			return;
-		}
 
 		if ( 'all_with_meta' === $qv['fields'] ) {
 			cache_users( $this->results );
 
 			$r = array();
-			foreach ( $this->results as $userid ) {
+			foreach ( $this->results as $userid )
 				$r[ $userid ] = new WP_User( $userid, '', $qv['blog_id'] );
-			}
 
 			$this->results = $r;
 		} elseif ( 'all' === $qv['fields'] ) {
@@ -774,25 +745,25 @@ class WP_User_Query {
 			$_orderby          = 'post_count';
 		} elseif ( 'ID' === $orderby || 'id' === $orderby ) {
 			$_orderby = 'ID';
-		} elseif ( 'meta_value' === $orderby || $this->get( 'meta_key' ) == $orderby ) {
+		} elseif ( 'meta_value' === $orderby || $this->get( 'meta_key' ) === $orderby ) {
 			$_orderby = "$wpdb->usermeta.meta_value";
 		} elseif ( 'meta_value_num' === $orderby ) {
-			$_orderby = "$wpdb->usermeta.meta_value+0";
+			$_orderby = "CAST($wpdb->usermeta.meta_value as numeric)";
 		} elseif ( 'include' === $orderby && ! empty( $this->query_vars['include'] ) ) {
-			$include     = wp_parse_id_list( $this->query_vars['include'] );
+			$include = wp_parse_id_list( $this->query_vars['include'] );
 			$include_sql = implode( ',', $include );
-			$_orderby    = "FIELD( $wpdb->users.ID, $include_sql )";
+			$_orderby = "FIELD( $wpdb->users.ID, $include_sql )";
 		} elseif ( 'nicename__in' === $orderby ) {
 			$sanitized_nicename__in = array_map( 'esc_sql', $this->query_vars['nicename__in'] );
-			$nicename__in           = implode( "','", $sanitized_nicename__in );
-			$_orderby               = "FIELD( user_nicename, '$nicename__in' )";
+			$nicename__in = implode( "','", $sanitized_nicename__in );
+			$_orderby = "FIELD( user_nicename, '$nicename__in' )";
 		} elseif ( 'login__in' === $orderby ) {
 			$sanitized_login__in = array_map( 'esc_sql', $this->query_vars['login__in'] );
-			$login__in           = implode( "','", $sanitized_login__in );
-			$_orderby            = "FIELD( user_login, '$login__in' )";
+			$login__in = implode( "','", $sanitized_login__in );
+			$_orderby = "FIELD( user_login, '$login__in' )";
 		} elseif ( isset( $meta_query_clauses[ $orderby ] ) ) {
 			$meta_clause = $meta_query_clauses[ $orderby ];
-			$_orderby    = sprintf( 'CAST(%s.meta_value AS %s)', esc_sql( $meta_clause['alias'] ), esc_sql( $meta_clause['cast'] ) );
+			$_orderby = sprintf( "CAST(%s.meta_value AS %s)", esc_sql( $meta_clause['alias'] ), esc_sql( $meta_clause['cast'] ) );
 		}
 
 		return $_orderby;

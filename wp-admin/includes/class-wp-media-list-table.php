@@ -474,7 +474,12 @@ class WP_Media_List_Table extends WP_List_Table {
 	 * @param WP_Post $post The current WP_Post object.
 	 */
 	public function column_date( $post ) {
-		if ( '0000-00-00 00:00:00' === $post->post_date ) {
+		/*
+		 * PN Mod: Start
+		 * MSSQL won't accept a date of 0000-00-00 00:00:00 and considers it invalid.
+		 * Default instead to 0001-01-01 00:00:00.
+		 */
+		if ( '0001-01-01 00:00:00' == $post->post_date ) {
 			$h_time = __( 'Unpublished' );
 		} else {
 			$time      = get_post_timestamp( $post );
@@ -487,6 +492,7 @@ class WP_Media_List_Table extends WP_List_Table {
 				$h_time = get_the_time( __( 'Y/m/d' ), $post );
 			}
 		}
+		// PN Mod: End
 
 		echo $h_time;
 	}

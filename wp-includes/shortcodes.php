@@ -71,7 +71,7 @@ function add_shortcode( $tag, $callback ) {
 
 	if ( 0 !== preg_match( '@[<>&/\[\]\x00-\x20=]@', $tag ) ) {
 		/* translators: 1: Shortcode name, 2: Space-separated list of reserved characters. */
-		$message = sprintf( __( 'Invalid shortcode name: %1$s. Do not use spaces or reserved characters: %2$s' ), $tag, '& / < > [ ] =' );
+		$message = sprintf( __( 'Invalid shortcode name: %s. Do not use spaces or reserved characters: & / < > [ ]' ), $tag );
 		_doing_it_wrong( __FUNCTION__, $message, '4.4.0' );
 		return;
 	}

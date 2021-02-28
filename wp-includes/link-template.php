@@ -1859,27 +1859,27 @@ function get_adjacent_post( $in_same_term = false, $excluded_terms = '', $previo
 	 * @param WP_Post $post    WP_Post object.
 	 * @param string  $order   Sort order. 'DESC' for previous post, 'ASC' for next.
 	 */
-	$sort = apply_filters( "get_{$adjacent}_post_sort", "ORDER BY p.post_date $order LIMIT 1", $post, $order );
+	$sort  = apply_filters( "get_{$adjacent}_post_sort", "ORDER BY p.post_date $order", $post, $order );
 
-	$query     = "SELECT p.ID FROM $wpdb->posts AS p $join $where $sort";
+	$query = "SELECT TOP 1 p.ID FROM $wpdb->posts AS p $join $where $sort";
 	$query_key = 'adjacent_post_' . md5( $query );
-	$result    = wp_cache_get( $query_key, 'counts' );
+	$result = wp_cache_get( $query_key, 'counts' );
 	if ( false !== $result ) {
 		if ( $result ) {
-			$result = get_post( $result );
+ 			$result = get_post( $result );
 		}
 		return $result;
 	}
 
 	$result = $wpdb->get_var( $query );
 	if ( null === $result ) {
-		$result = '';
+ 		$result = '';
 	}
 
 	wp_cache_set( $query_key, $result, 'counts' );
 
 	if ( $result ) {
-		$result = get_post( $result );
+ 		$result = get_post( $result );
 	}
 
 	return $result;

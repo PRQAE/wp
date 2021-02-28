@@ -133,7 +133,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<div class="about__section has-2-columns is-wider-left has-transparent-background-color">
 				<div class="column">
 					<h2><?php _e( 'Greater layout flexibility' ); ?></h2>
-					<p><?php _e( 'Bring your stories to life with more tools that let you edit your layout with or without code. Single column blocks, designs using mixed widths and columns, full-width headers, and videos in your cover block—make small changes or big statements with equal ease!' ); ?></p>
+					<p><?php _e( 'Bring your stories to life with more tools that let you edit your layout with or without code. Single column blocks, designs using mixed widths and columns, full-width headers, and videos in your cover blockΓÇömake small changes or big statements with equal ease!' ); ?></p>
 				</div>
 			</div>
 			<div class="about__section has-2-columns is-wider-right has-transparent-background-color">
@@ -157,7 +157,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<h2><?php _e( 'Twenty Twenty-One is here!' ); ?></h2>
 			<p>
 				<?php
-				_e( 'Twenty Twenty-One is a blank canvas for your ideas, and the block editor is the best brush. It is built for the block editor and packed with brand-new block patterns you can only get in the default themes. Try different layouts in a matter of seconds, and let the theme’s eye-catching, yet timeless design make your work shine.' );
+				_e( 'Twenty Twenty-One is a blank canvas for your ideas, and the block editor is the best brush. It is built for the block editor and packed with brand-new block patterns you can only get in the default themes. Try different layouts in a matter of seconds, and let the themeΓÇÖs eye-catching, yet timeless design make your work shine.' );
 				?>
 			</p>
 		</div>
@@ -178,7 +178,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					<?php
 					printf(
 						/* translators: 1: WordPress accessibility-ready guidelines link, 2: WCAG information link. */
-						__( 'What’s more, this default theme puts accessibility at the heart of your website. It conforms to the <a href="%1$s">WordPress accessibility-ready guidelines</a> and addresses several more specialized standards from the <a href="%2$s">Web Content Accessibility Guidelines (WCAG) 2.1 at level AAA</a>. It will help you meet the highest level of international accessibility standards when you create accessible content and choose plugins which are accessible too!' ),
+						__( 'WhatΓÇÖs more, this default theme puts accessibility at the heart of your website. It conforms to the <a href="%1$s">WordPress accessibility-ready guidelines</a> and addresses several more specialized standards from the <a href="%2$s">Web Content Accessibility Guidelines (WCAG) 2.1 at level AAA</a>. It will help you meet the highest level of international accessibility standards when you create accessible content and choose plugins which are accessible too!' ),
 						'https://make.wordpress.org/themes/handbook/review/accessibility/',
 						'https://www.w3.org/WAI/WCAG2AAA-Conformance'
 					);
@@ -197,7 +197,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 				<h3 class="is-larger-heading"><?php _e( 'A rainbow of soft pastels' ); ?></h3>
 			</div>
 			<div class="column">
-				<p><?php _e( 'Perfect for a new year, Twenty Twenty-One gives you a range of pre-selected color palettes in pastel, all of which meet AAA standards for contrast. You can also choose your own background color for the theme, and the theme chooses accessibility-conscious text colors for you — automatically!' ); ?></p>
+				<p><?php _e( 'Perfect for a new year, Twenty Twenty-One gives you a range of pre-selected color palettes in pastel, all of which meet AAA standards for contrast. You can also choose your own background color for the theme, and the theme chooses accessibility-conscious text colors for you ΓÇö automatically!' ); ?></p>
 				<p><?php _e( 'Need more flexibility than that? You can also choose your own color palette from the color picker.' ); ?></p>
 			</div>
 		</div>
@@ -228,7 +228,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					<?php
 					printf(
 						/* translators: %s: Accessibility statement feature plugin link. */
-						__( 'Even if you’re not an expert, you can start letting folks know about your site’s commitment to accessibility at the click of a button! The new <a href="%s">feature plugin</a> includes template copy for you to update and publish, and it’s written to support different contexts and jurisdictions.' ),
+						__( 'Even if youΓÇÖre not an expert, you can start letting folks know about your siteΓÇÖs commitment to accessibility at the click of a button! The new <a href="%s">feature plugin</a> includes template copy for you to update and publish, and itΓÇÖs written to support different contexts and jurisdictions.' ),
 						'https://github.com/10degrees/accessibility-statement-plugin'
 					);
 					?>
@@ -236,7 +236,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			</div>
 			<div class="column has-border" style="background-color:#d1d1e4;background-color:var(--global--color-purple)">
 				<h3><?php _e( 'Built-in patterns' ); ?></h3>
-				<p><?php _e( 'If you’ve not had the chance to play with block patterns yet, all default themes now feature a range of block patterns that let you master complex layouts with minimal effort. Customize the patterns to your liking with the copy, images and colors that fit your story or brand.' ); ?></p>
+				<p><?php _e( 'If youΓÇÖve not had the chance to play with block patterns yet, all default themes now feature a range of block patterns that let you master complex layouts with minimal effort. Customize the patterns to your liking with the copy, images and colors that fit your story or brand.' ); ?></p>
 			</div>
 		</div>
 
@@ -246,7 +246,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<h2 class="is-section-header"><?php _e( 'For developers' ); ?></h2>
 			<div class="column">
 				<h3><?php _e( 'REST API authentication with Application Passwords' ); ?></h3>
-				<p><?php _e( 'Thanks to the API’s new Application Passwords authorization feature, third-party apps can connect to your site seamlessly and securely. This new REST API feature lets you see what apps are connecting to your site and control what they do.' ); ?></p>
+				<p><?php _e( 'Thanks to the APIΓÇÖs new Application Passwords authorization feature, third-party apps can connect to your site seamlessly and securely. This new REST API feature lets you see what apps are connecting to your site and control what they do.' ); ?></p>
 			</div>
 			<div class="column">
 				<h3><?php _e( 'More PHP 8 support' ); ?></h3>
@@ -279,7 +279,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					<?php
 					printf(
 						/* translators: %s: jQuery Migrate plugin link. */
-						__( 'If you find issues with the way your site looks (e.g. a slider doesn’t work, a button is stuck — that sort of thing), install the <a href="%s">jQuery Migrate plugin</a>.' ),
+						__( 'If you find issues with the way your site looks (e.g. a slider doesnΓÇÖt work, a button is stuck ΓÇö that sort of thing), install the <a href="%s">jQuery Migrate plugin</a>.' ),
 						current_user_can( 'install_plugins' ) ?
 							esc_url( network_admin_url( 'plugin-install.php?tab=search&type=term&s=slug:enable-jquery-migrate-helper' ) ) :
 							esc_url( __( 'https://wordpress.org/plugins/enable-jquery-migrate-helper/' ) )

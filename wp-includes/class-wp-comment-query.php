@@ -685,14 +685,17 @@ class WP_Comment_Query {
 
 		if ( ! empty( $number ) ) {
 			if ( $offset ) {
-				$limits = 'LIMIT ' . $offset . ',' . $number;
+				$limits = 'OFFSET ' . $offset . ' ROWS FETCH NEXT ' . $number . ' ROWS ONLY';
 			} else {
-				$limits = 'LIMIT ' . ( $number * ( $paged - 1 ) ) . ',' . $number;
+				$limits = 'OFFSET ' . ( $number * ( $paged - 1 ) ) . ' ROWS FETCH NEXT ' . $number . ' ROWS ONLY';
 			}
 		}
 
 		if ( $this->query_vars['count'] ) {
-			$fields = 'COUNT(*)';
+			$fields = 'COUNT(*) as qty';
+			$orderby = ''; // ORDER BY breaks in MSSQL here since comment_date_gmt won't be in the query statement.
+			$order = '';
+			$limits = '';
 		} else {
 			$fields = "$wpdb->comments.comment_ID";
 		}
@@ -929,15 +932,16 @@ class WP_Comment_Query {
 		}
 
 		$found_rows = '';
-		if ( ! $this->query_vars['no_found_rows'] ) {
-			$found_rows = 'SQL_CALC_FOUND_ROWS';
-		}
 
 		$this->sql_clauses['select']  = "SELECT $found_rows $fields";
 		$this->sql_clauses['from']    = "FROM $wpdb->comments $join";
 		$this->sql_clauses['groupby'] = $groupby;
 		$this->sql_clauses['orderby'] = $orderby;
 		$this->sql_clauses['limits']  = $limits;
+
+		if ( ! $this->query_vars['no_found_rows'] ) {
+			$wpdb->query( "SELECT COUNT(*) as [found_rows] {$this->sql_clauses['from']} {$where} {$this->sql_clauses['groupby']}" );
+		}
 
 		$this->request = "{$this->sql_clauses['select']} {$this->sql_clauses['from']} {$where} {$this->sql_clauses['groupby']} {$this->sql_clauses['orderby']} {$this->sql_clauses['limits']}";
 
@@ -1164,15 +1168,15 @@ class WP_Comment_Query {
 		if ( $this->query_vars['meta_key'] === $orderby || 'meta_value' === $orderby ) {
 			$parsed = "$wpdb->commentmeta.meta_value";
 		} elseif ( 'meta_value_num' === $orderby ) {
-			$parsed = "$wpdb->commentmeta.meta_value+0";
+			$parsed = "CAST($wpdb->commentmeta.meta_value as numeric)";
 		} elseif ( 'comment__in' === $orderby ) {
 			$comment__in = implode( ',', array_map( 'absint', $this->query_vars['comment__in'] ) );
-			$parsed      = "FIELD( {$wpdb->comments}.comment_ID, $comment__in )";
+			$parsed = "FIELD( {$wpdb->comments}.comment_ID, $comment__in )";
 		} elseif ( in_array( $orderby, $allowed_keys, true ) ) {
 
 			if ( isset( $meta_query_clauses[ $orderby ] ) ) {
 				$meta_clause = $meta_query_clauses[ $orderby ];
-				$parsed      = sprintf( 'CAST(%s.meta_value AS %s)', esc_sql( $meta_clause['alias'] ), esc_sql( $meta_clause['cast'] ) );
+				$parsed = sprintf( "CAST(%s.meta_value AS %s)", esc_sql( $meta_clause['alias'] ), esc_sql( $meta_clause['cast'] ) );
 			} else {
 				$parsed = "$wpdb->comments.$orderby";
 			}
