@@ -1,0 +1,91 @@
+/*
+Theme Name: flatsome-child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+.woocommerce-variation-price::before {
+  content: 'الإجمالي: ';
+}
+.button, button, input[type=submit], input[type=reset], input[type=button]{
+	margin-left:0px;
+}
+.dark h5{
+	color:#E1A777 !important;
+	font-size:16px;
+}
+
+element.style {
+}
+.nav-left {
+    justify-content: center;
+}
+ul.nav.nav-left.medium-nav-center.nav-small.nav-divided{
+	justify-content: left;
+}
+td.product-total, .shop_table tfoot tr td, .cart_totals tbody tr td, .shop_table thead tr th:last-of-type, .shop_table tr td:last-of-type {
+    text-align: right;
+}
+h6.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
+	display:none;
+}
+div.woocommerce-additional-fields{
+	display:none;
+}
+/*p.product-page-price.price-on-sale{
+	display:none;
+}
+.price-wrapper .price {
+    display: none !important;
+}*/
+h1, h2, h3, h4, h5, h6, .heading-font, .off-canvas-center .nav-sidebar.nav-vertical>li>a {
+    letter-spacing: 0 !important;
+}
+.html.custom.html_topbar_right{
+    font-size: 16px;
+    font-weight: 700;
+}
+.woocommerce-variation-price {
+    display: none !important;
+}
+span.select2-selection.select2-selection--single{
+	height:50px !important;
+}
+.select2-container[dir=rtl] .select2-selection--single .select2-selection__rendered {
+    padding-top: 10px !important;
+}
+
+@media (max-width: 849px){
+.digits-login-modal{
+    font-size:1.5em;
+    font-weight:700;
+    margin:auto;
+	text-align:center;
+	}
+}
+@media only screen and (max-width: 48em) {
+/*************** ADD MOBILE ONLY CSS HERE  ***************/
+}
+
+@media (max-width: 849px){
+.medium-flex-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.flex-col.medium-text-center {
+    margin-top: 0px!important;
+}
+.page-title-inner ul, .page-title-inner select, .page-title-inner form, .page-title-inner button, .page-title-inner p {
+    margin-top:0px !important;
+}
+.checkout-breadcrumbs a {
+    padding-right: 100% !important;
+	}
+.category-filter-row {
+    float: right !important;
+}
+}

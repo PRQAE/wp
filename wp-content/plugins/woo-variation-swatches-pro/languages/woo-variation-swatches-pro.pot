@@ -1,0 +1,709 @@
+# Copyright (C) 2020 Variation Swatches for WooCommerce - Pro
+# This file is distributed under the same license as the Variation Swatches for WooCommerce - Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Variation Swatches for WooCommerce - Pro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: ThemeHippo <themehippo@gmail.com>\n"
+"Last-Translator: Emran Ahmed <emran.bd.08@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/EmranAhmed/woo-variation-swatches/issues\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:33, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:33
+msgid "Swatches Settings"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:68, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:68
+msgid "Custom"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:138, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:138
+msgid "Catalog mode attribute"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:144, ../includes/html-product-attribute.php:44, ../includes/html-product-attribute.php:56, ../includes/html-product-attribute.php:69, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:144, ../woo-variation-swatches-pro/includes/html-product-attribute.php:44, ../woo-variation-swatches-pro/includes/html-product-attribute.php:56, ../woo-variation-swatches-pro/includes/html-product-attribute.php:69
+msgid "Global"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:160, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:160
+msgid "Single variation preview attribute"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:181, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:181
+msgid "Default Dropdowns to Button Type"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:188, ../includes/class-woo-variation-swatches-pro-product-meta.php:209, ../includes/hooks.php:132, ../includes/html-product-attribute.php:208, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:188, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:209, ../woo-variation-swatches-pro/includes/hooks.php:132, ../woo-variation-swatches-pro/includes/html-product-attribute.php:208
+msgid "Yes"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:189, ../includes/class-woo-variation-swatches-pro-product-meta.php:210, ../includes/hooks.php:90, ../includes/hooks.php:131, ../includes/html-product-attribute.php:143, ../includes/html-product-attribute.php:207, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:189, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:210, ../woo-variation-swatches-pro/includes/hooks.php:90, ../woo-variation-swatches-pro/includes/hooks.php:131, ../woo-variation-swatches-pro/includes/html-product-attribute.php:143, ../woo-variation-swatches-pro/includes/html-product-attribute.php:207
+msgid "No"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:202, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:202
+msgid "Default Dropdowns to Image Type"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:212, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:212
+msgid "if variation has an image"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:224, ../includes/hooks.php:676, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:224, ../woo-variation-swatches-pro/includes/hooks.php:676
+msgid "Default Image Type Attribute"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:231, ../includes/html-product-attribute.php:27, ../includes/html-product-attribute.php:123, ../includes/html-product-attribute.php:140, ../includes/html-product-attribute.php:206, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:231, ../woo-variation-swatches-pro/includes/html-product-attribute.php:27, ../woo-variation-swatches-pro/includes/html-product-attribute.php:123, ../woo-variation-swatches-pro/includes/html-product-attribute.php:140, ../woo-variation-swatches-pro/includes/html-product-attribute.php:206
+msgid "Default"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:257, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:257
+msgid "Save swatches settings"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:258, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:258
+msgid "Reset to default"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-pro-product-meta.php:265, ../includes/class-woo-variation-swatches-pro-product-meta.php:281, ../includes/class-woo-variation-swatches-pro-product-meta.php:299, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:265, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:281, ../woo-variation-swatches-pro/includes/class-woo-variation-swatches-pro-product-meta.php:299
+msgid "Wrong Nonce"
+msgstr ""
+
+#: ../includes/functions.php:73, ../woo-variation-swatches-pro/includes/functions.php:73
+msgid "Radio"
+msgstr ""
+
+#: ../includes/functions.php:311, ../woo-variation-swatches-pro/includes/functions.php:311
+msgid "Choose an option"
+msgstr ""
+
+#: ../includes/functions.php:383, ../woo-variation-swatches-pro/includes/functions.php:383
+msgid "+%s More"
+msgstr ""
+
+#: ../includes/hooks.php:83, ../includes/html-product-attribute.php:136, ../woo-variation-swatches-pro/includes/hooks.php:83, ../woo-variation-swatches-pro/includes/html-product-attribute.php:136
+msgid "Show Tooltip"
+msgstr ""
+
+#: ../includes/hooks.php:84, ../woo-variation-swatches-pro/includes/hooks.php:84
+msgid "Individually show or hide tooltip."
+msgstr ""
+
+#: ../includes/hooks.php:88, ../includes/html-product-attribute.php:58, ../includes/html-product-attribute.php:141, ../woo-variation-swatches-pro/includes/hooks.php:88, ../woo-variation-swatches-pro/includes/html-product-attribute.php:58, ../woo-variation-swatches-pro/includes/html-product-attribute.php:141
+msgid "Text"
+msgstr ""
+
+#: ../includes/hooks.php:89, ../includes/html-product-attribute.php:59, ../includes/html-product-attribute.php:142, ../woo-variation-swatches-pro/includes/hooks.php:89, ../woo-variation-swatches-pro/includes/html-product-attribute.php:59, ../woo-variation-swatches-pro/includes/html-product-attribute.php:142
+msgid "Image"
+msgstr ""
+
+#: ../includes/hooks.php:94, ../woo-variation-swatches-pro/includes/hooks.php:94
+msgid "Tooltip text"
+msgstr ""
+
+#: ../includes/hooks.php:95, ../woo-variation-swatches-pro/includes/hooks.php:95
+msgid "Tooltip text. Default tooltip text will be term name."
+msgstr ""
+
+#: ../includes/hooks.php:103, ../woo-variation-swatches-pro/includes/hooks.php:103
+msgid "Tooltip image"
+msgstr ""
+
+#: ../includes/hooks.php:104, ../woo-variation-swatches-pro/includes/hooks.php:104
+msgid "Tooltip image. Default tooltip text will be term name."
+msgstr ""
+
+#: ../includes/hooks.php:115, ../woo-variation-swatches-pro/includes/hooks.php:115
+msgid "Image Size"
+msgstr ""
+
+#: ../includes/hooks.php:116, ../woo-variation-swatches-pro/includes/hooks.php:116
+msgid "Choose Image size, ( this will override global settings )"
+msgstr ""
+
+#: ../includes/hooks.php:126, ../woo-variation-swatches-pro/includes/hooks.php:126
+msgid "Is Dual Color"
+msgstr ""
+
+#: ../includes/hooks.php:127, ../woo-variation-swatches-pro/includes/hooks.php:127
+msgid "Make dual color"
+msgstr ""
+
+#: ../includes/hooks.php:139, ../includes/html-product-attribute.php:214, ../woo-variation-swatches-pro/includes/hooks.php:139, ../woo-variation-swatches-pro/includes/html-product-attribute.php:214
+msgid "Secondary Color"
+msgstr ""
+
+#: ../includes/hooks.php:140, ../woo-variation-swatches-pro/includes/hooks.php:140
+msgid "Add another color"
+msgstr ""
+
+#: ../includes/hooks.php:183, ../woo-variation-swatches-pro/includes/hooks.php:183
+msgid "Style"
+msgstr ""
+
+#: ../includes/hooks.php:186, ../woo-variation-swatches-pro/includes/hooks.php:186
+msgid "Tooltip Styling"
+msgstr ""
+
+#: ../includes/hooks.php:187, ../woo-variation-swatches-pro/includes/hooks.php:187
+msgid "Change tooltip styles"
+msgstr ""
+
+#: ../includes/hooks.php:192, ../woo-variation-swatches-pro/includes/hooks.php:192
+msgid "Tooltip background"
+msgstr ""
+
+#: ../includes/hooks.php:193, ../woo-variation-swatches-pro/includes/hooks.php:193
+msgid "Tooltip background color"
+msgstr ""
+
+#: ../includes/hooks.php:202, ../includes/hooks.php:203, ../woo-variation-swatches-pro/includes/hooks.php:202, ../woo-variation-swatches-pro/includes/hooks.php:203
+msgid "Tooltip text color"
+msgstr ""
+
+#: ../includes/hooks.php:212, ../includes/hooks.php:213, ../woo-variation-swatches-pro/includes/hooks.php:212, ../woo-variation-swatches-pro/includes/hooks.php:213
+msgid "Tooltip image width"
+msgstr ""
+
+#: ../includes/hooks.php:223, ../woo-variation-swatches-pro/includes/hooks.php:223
+msgid "Item Styling"
+msgstr ""
+
+#: ../includes/hooks.php:224, ../woo-variation-swatches-pro/includes/hooks.php:224
+msgid "Change item display style"
+msgstr ""
+
+#: ../includes/hooks.php:229, ../woo-variation-swatches-pro/includes/hooks.php:229
+msgid "Item border color"
+msgstr ""
+
+#: ../includes/hooks.php:230, ../woo-variation-swatches-pro/includes/hooks.php:230
+msgid "Swatches item border color. Default is: rgba(0, 0, 0, 0.3)"
+msgstr ""
+
+#: ../includes/hooks.php:239, ../woo-variation-swatches-pro/includes/hooks.php:239
+msgid "Item border size"
+msgstr ""
+
+#: ../includes/hooks.php:240, ../woo-variation-swatches-pro/includes/hooks.php:240
+msgid "Swatches item border size. Default is: 1"
+msgstr ""
+
+#: ../includes/hooks.php:245, ../includes/hooks.php:294, ../includes/hooks.php:343, ../woo-variation-swatches-pro/includes/hooks.php:245, ../woo-variation-swatches-pro/includes/hooks.php:294, ../woo-variation-swatches-pro/includes/hooks.php:343
+msgid "px"
+msgstr ""
+
+#: ../includes/hooks.php:250, ../woo-variation-swatches-pro/includes/hooks.php:250
+msgid "Item text color"
+msgstr ""
+
+#: ../includes/hooks.php:251, ../woo-variation-swatches-pro/includes/hooks.php:251
+msgid "Swatches item text color. Default is: #000000"
+msgstr ""
+
+#: ../includes/hooks.php:260, ../woo-variation-swatches-pro/includes/hooks.php:260
+msgid "Item background color"
+msgstr ""
+
+#: ../includes/hooks.php:261, ../woo-variation-swatches-pro/includes/hooks.php:261
+msgid "Swatches item background color. Default is: #FFFFFF"
+msgstr ""
+
+#: ../includes/hooks.php:272, ../woo-variation-swatches-pro/includes/hooks.php:272
+msgid "Item Hover Styling"
+msgstr ""
+
+#: ../includes/hooks.php:273, ../woo-variation-swatches-pro/includes/hooks.php:273
+msgid "Change item hover display style"
+msgstr ""
+
+#: ../includes/hooks.php:278, ../woo-variation-swatches-pro/includes/hooks.php:278
+msgid "Item hover border color"
+msgstr ""
+
+#: ../includes/hooks.php:279, ../woo-variation-swatches-pro/includes/hooks.php:279
+msgid "Swatches item hover border color. Default is: #000000"
+msgstr ""
+
+#: ../includes/hooks.php:288, ../woo-variation-swatches-pro/includes/hooks.php:288
+msgid "Item hover border size"
+msgstr ""
+
+#: ../includes/hooks.php:289, ../woo-variation-swatches-pro/includes/hooks.php:289
+msgid "Swatches item hover border size. Default is: 3"
+msgstr ""
+
+#: ../includes/hooks.php:299, ../woo-variation-swatches-pro/includes/hooks.php:299
+msgid "Item hover text color"
+msgstr ""
+
+#: ../includes/hooks.php:300, ../woo-variation-swatches-pro/includes/hooks.php:300
+msgid "Swatches item hover text color. Default is: #000000"
+msgstr ""
+
+#: ../includes/hooks.php:309, ../woo-variation-swatches-pro/includes/hooks.php:309
+msgid "Item hover background color"
+msgstr ""
+
+#: ../includes/hooks.php:310, ../woo-variation-swatches-pro/includes/hooks.php:310
+msgid "Swatches item hover background color. Default is: #FFFFFF"
+msgstr ""
+
+#: ../includes/hooks.php:321, ../woo-variation-swatches-pro/includes/hooks.php:321
+msgid "Item Selected Styling"
+msgstr ""
+
+#: ../includes/hooks.php:322, ../woo-variation-swatches-pro/includes/hooks.php:322
+msgid "Change selected item display style"
+msgstr ""
+
+#: ../includes/hooks.php:327, ../woo-variation-swatches-pro/includes/hooks.php:327
+msgid "Selected item border color"
+msgstr ""
+
+#: ../includes/hooks.php:328, ../woo-variation-swatches-pro/includes/hooks.php:328
+msgid "Swatches selected item border color. Default is: #000000"
+msgstr ""
+
+#: ../includes/hooks.php:337, ../woo-variation-swatches-pro/includes/hooks.php:337
+msgid "Selected item border size"
+msgstr ""
+
+#: ../includes/hooks.php:338, ../woo-variation-swatches-pro/includes/hooks.php:338
+msgid "Swatches selected item border size. Default is: 2"
+msgstr ""
+
+#: ../includes/hooks.php:349, ../woo-variation-swatches-pro/includes/hooks.php:349
+msgid "Selected item text color"
+msgstr ""
+
+#: ../includes/hooks.php:350, ../woo-variation-swatches-pro/includes/hooks.php:350
+msgid "Swatches item selected text color. Default is: #000000"
+msgstr ""
+
+#: ../includes/hooks.php:359, ../woo-variation-swatches-pro/includes/hooks.php:359
+msgid "Selected item  background color"
+msgstr ""
+
+#: ../includes/hooks.php:360, ../woo-variation-swatches-pro/includes/hooks.php:360
+msgid "Swatches item selected background color. Default is: #FFFFFF"
+msgstr ""
+
+#: ../includes/hooks.php:371, ../woo-variation-swatches-pro/includes/hooks.php:371
+msgid "Archive / Shop"
+msgstr ""
+
+#: ../includes/hooks.php:373, ../woo-variation-swatches-pro/includes/hooks.php:373
+msgid "Visual Section"
+msgstr ""
+
+#: ../includes/hooks.php:374, ../woo-variation-swatches-pro/includes/hooks.php:374
+msgid "Advanced change some visual styles on shop / archive page"
+msgstr ""
+
+#: ../includes/hooks.php:379, ../woo-variation-swatches-pro/includes/hooks.php:379
+msgid "Enable Swatches"
+msgstr ""
+
+#: ../includes/hooks.php:380, ../woo-variation-swatches-pro/includes/hooks.php:380
+msgid "Show swatches on archive / shop page."
+msgstr ""
+
+#: ../includes/hooks.php:387, ../woo-variation-swatches-pro/includes/hooks.php:387
+msgid "Product wrapper"
+msgstr ""
+
+#: ../includes/hooks.php:388, ../woo-variation-swatches-pro/includes/hooks.php:388
+msgid "Archive product wrapper selector. Default: %s."
+msgstr ""
+
+#: ../includes/hooks.php:396, ../woo-variation-swatches-pro/includes/hooks.php:396
+msgid "Image selector"
+msgstr ""
+
+#: ../includes/hooks.php:397, ../woo-variation-swatches-pro/includes/hooks.php:397
+msgid "Archive product image selector to show variation image. You can also use multiple selectors separated by comma (,). Default: %s."
+msgstr ""
+
+#: ../includes/hooks.php:405, ../woo-variation-swatches-pro/includes/hooks.php:405
+msgid "Add to cart button selector"
+msgstr ""
+
+#: ../includes/hooks.php:406, ../woo-variation-swatches-pro/includes/hooks.php:406
+msgid "Archive add to cart button selector. Leave blank for default."
+msgstr ""
+
+#: ../includes/hooks.php:413, ../woo-variation-swatches-pro/includes/hooks.php:413
+msgid "Display position"
+msgstr ""
+
+#: ../includes/hooks.php:414, ../woo-variation-swatches-pro/includes/hooks.php:414
+msgid "Show archive swatches position. <br> <span style=\"color: red\">Note: Some theme remove default woocommerce hooks that why it's may not work each theme. For theme compatibility <a target=\"_blank\" href=\"%s\">please open a ticket</a>.</span>"
+msgstr ""
+
+#: ../includes/hooks.php:417, ../woo-variation-swatches-pro/includes/hooks.php:417
+msgid "Before add to cart button"
+msgstr ""
+
+#: ../includes/hooks.php:418, ../woo-variation-swatches-pro/includes/hooks.php:418
+msgid "After add to cart button"
+msgstr ""
+
+#: ../includes/hooks.php:425, ../woo-variation-swatches-pro/includes/hooks.php:425
+msgid "Swatches align"
+msgstr ""
+
+#: ../includes/hooks.php:426, ../woo-variation-swatches-pro/includes/hooks.php:426
+msgid "Swatches align on archive page"
+msgstr ""
+
+#: ../includes/hooks.php:429, ../woo-variation-swatches-pro/includes/hooks.php:429
+msgid "Left"
+msgstr ""
+
+#: ../includes/hooks.php:430, ../woo-variation-swatches-pro/includes/hooks.php:430
+msgid "Center"
+msgstr ""
+
+#: ../includes/hooks.php:431, ../woo-variation-swatches-pro/includes/hooks.php:431
+msgid "Right"
+msgstr ""
+
+#: ../includes/hooks.php:437, ../includes/html-product-attribute.php:52, ../woo-variation-swatches-pro/includes/hooks.php:437, ../woo-variation-swatches-pro/includes/html-product-attribute.php:52
+msgid "Enable tooltip"
+msgstr ""
+
+#: ../includes/hooks.php:438, ../woo-variation-swatches-pro/includes/hooks.php:438
+msgid "Show tooltip on archive / shop page."
+msgstr ""
+
+#: ../includes/hooks.php:444, ../woo-variation-swatches-pro/includes/hooks.php:444
+msgid "Show clear link"
+msgstr ""
+
+#: ../includes/hooks.php:445, ../woo-variation-swatches-pro/includes/hooks.php:445
+msgid "Show clear link on archive / shop page."
+msgstr ""
+
+#: ../includes/hooks.php:460, ../woo-variation-swatches-pro/includes/hooks.php:460
+msgid "Item width"
+msgstr ""
+
+#: ../includes/hooks.php:461, ../woo-variation-swatches-pro/includes/hooks.php:461
+msgid "Variation item width on archive page"
+msgstr ""
+
+#: ../includes/hooks.php:470, ../woo-variation-swatches-pro/includes/hooks.php:470
+msgid "Item height"
+msgstr ""
+
+#: ../includes/hooks.php:471, ../woo-variation-swatches-pro/includes/hooks.php:471
+msgid "Variation item height on archive page"
+msgstr ""
+
+#: ../includes/hooks.php:480, ../woo-variation-swatches-pro/includes/hooks.php:480
+msgid "Item Font Size"
+msgstr ""
+
+#: ../includes/hooks.php:481, ../woo-variation-swatches-pro/includes/hooks.php:481
+msgid "Archive product variation item font size"
+msgstr ""
+
+#: ../includes/hooks.php:491, ../woo-variation-swatches-pro/includes/hooks.php:491
+msgid "Special Attributes"
+msgstr ""
+
+#: ../includes/hooks.php:494, ../woo-variation-swatches-pro/includes/hooks.php:494
+msgid "Single Variation Image Preview"
+msgstr ""
+
+#: ../includes/hooks.php:495, ../woo-variation-swatches-pro/includes/hooks.php:495
+msgid "Switch variation image when single attribute selected on product page."
+msgstr ""
+
+#: ../includes/hooks.php:500, ../woo-variation-swatches-pro/includes/hooks.php:500
+msgid "Variation Image Preview"
+msgstr ""
+
+#: ../includes/hooks.php:501, ../woo-variation-swatches-pro/includes/hooks.php:501
+msgid "Show single attribute variation image based on specific attribute select on product page."
+msgstr ""
+
+#: ../includes/hooks.php:509, ../includes/hooks.php:549, ../includes/hooks.php:603, ../woo-variation-swatches-pro/includes/hooks.php:509, ../woo-variation-swatches-pro/includes/hooks.php:549, ../woo-variation-swatches-pro/includes/hooks.php:603
+msgid "Choose Attribute"
+msgstr ""
+
+#: ../includes/hooks.php:510, ../woo-variation-swatches-pro/includes/hooks.php:510
+msgid "Choose an attribute to show variation image"
+msgstr ""
+
+#: ../includes/hooks.php:526, ../woo-variation-swatches-pro/includes/hooks.php:526
+msgid "Preview on Shop Page"
+msgstr ""
+
+#: ../includes/hooks.php:527, ../woo-variation-swatches-pro/includes/hooks.php:527
+msgid "Enable single attribute variation image based on specific attribute select on shop / archive page also."
+msgstr ""
+
+#: ../includes/hooks.php:534, ../woo-variation-swatches-pro/includes/hooks.php:534
+msgid "Catalog mode"
+msgstr ""
+
+#: ../includes/hooks.php:535, ../woo-variation-swatches-pro/includes/hooks.php:535
+msgid "Show single attribute as catalog mode on shop / archive pages"
+msgstr ""
+
+#: ../includes/hooks.php:540, ../woo-variation-swatches-pro/includes/hooks.php:540
+msgid "Show Single Attribute"
+msgstr ""
+
+#: ../includes/hooks.php:541, ../woo-variation-swatches-pro/includes/hooks.php:541
+msgid "Show Single Attribute taxonomies on archive page"
+msgstr ""
+
+#: ../includes/hooks.php:550, ../woo-variation-swatches-pro/includes/hooks.php:550
+msgid "Choose an attribute to show on catalog mode"
+msgstr ""
+
+#: ../includes/hooks.php:558, ../woo-variation-swatches-pro/includes/hooks.php:558
+msgid "Catalog Mode Display Event"
+msgstr ""
+
+#: ../includes/hooks.php:559, ../woo-variation-swatches-pro/includes/hooks.php:559
+msgid "Show catalog mode image display event."
+msgstr ""
+
+#: ../includes/hooks.php:562, ../woo-variation-swatches-pro/includes/hooks.php:562
+msgid "on Click"
+msgstr ""
+
+#: ../includes/hooks.php:563, ../woo-variation-swatches-pro/includes/hooks.php:563
+msgid "on Hover"
+msgstr ""
+
+#: ../includes/hooks.php:570, ../woo-variation-swatches-pro/includes/hooks.php:570
+msgid "Linkable Attribute"
+msgstr ""
+
+#: ../includes/hooks.php:571, ../woo-variation-swatches-pro/includes/hooks.php:571
+msgid "Keep attribute variation selected on product page after clicking from catalog page"
+msgstr ""
+
+#: ../includes/hooks.php:581, ../woo-variation-swatches-pro/includes/hooks.php:581
+msgid "Attribute display limit"
+msgstr ""
+
+#: ../includes/hooks.php:582, ../woo-variation-swatches-pro/includes/hooks.php:582
+msgid "Catalog mode attribute display limit. Default is 0. Means no limit."
+msgstr ""
+
+#: ../includes/hooks.php:588, ../woo-variation-swatches-pro/includes/hooks.php:588
+msgid "Large Size Attribute Section"
+msgstr ""
+
+#: ../includes/hooks.php:589, ../woo-variation-swatches-pro/includes/hooks.php:589
+msgid "Make a attribute taxonomies size large on single product"
+msgstr ""
+
+#: ../includes/hooks.php:594, ../woo-variation-swatches-pro/includes/hooks.php:594
+msgid "Show Attribute In Large"
+msgstr ""
+
+#: ../includes/hooks.php:595, ../woo-variation-swatches-pro/includes/hooks.php:595
+msgid "Show Attribute taxonomies in large size"
+msgstr ""
+
+#: ../includes/hooks.php:604, ../woo-variation-swatches-pro/includes/hooks.php:604
+msgid "Choose an attribute to make it large"
+msgstr ""
+
+#: ../includes/hooks.php:612, ../woo-variation-swatches-pro/includes/hooks.php:612
+msgid "Width"
+msgstr ""
+
+#: ../includes/hooks.php:613, ../woo-variation-swatches-pro/includes/hooks.php:613
+msgid "Large variation item width"
+msgstr ""
+
+#: ../includes/hooks.php:623, ../woo-variation-swatches-pro/includes/hooks.php:623
+msgid "Height"
+msgstr ""
+
+#: ../includes/hooks.php:624, ../woo-variation-swatches-pro/includes/hooks.php:624
+msgid "Large variation item height"
+msgstr ""
+
+#: ../includes/hooks.php:634, ../woo-variation-swatches-pro/includes/hooks.php:634
+msgid "Font Size"
+msgstr ""
+
+#: ../includes/hooks.php:635, ../woo-variation-swatches-pro/includes/hooks.php:635
+msgid "Large variation font size"
+msgstr ""
+
+#: ../includes/hooks.php:645, ../includes/hooks.php:654, ../woo-variation-swatches-pro/includes/hooks.php:645, ../woo-variation-swatches-pro/includes/hooks.php:654
+msgid "License Key"
+msgstr ""
+
+#: ../includes/hooks.php:647, ../woo-variation-swatches-pro/includes/hooks.php:647
+msgid "License Section"
+msgstr ""
+
+#: ../includes/hooks.php:648, ../woo-variation-swatches-pro/includes/hooks.php:648
+msgid "Product license key"
+msgstr ""
+
+#: ../includes/hooks.php:655, ../woo-variation-swatches-pro/includes/hooks.php:655
+msgid "Please add product license key and add your domain(s) on <a target=\"_blank\" href=\"%s\">GetWooPlugins.com -> My Downloads</a> to get automatic update."
+msgstr ""
+
+#: ../includes/hooks.php:669, ../woo-variation-swatches-pro/includes/hooks.php:669
+msgid "Auto Dropdowns to Image"
+msgstr ""
+
+#: ../includes/hooks.php:670, ../woo-variation-swatches-pro/includes/hooks.php:670
+msgid "Convert default dropdowns to image type if variation has an image."
+msgstr ""
+
+#: ../includes/hooks.php:678, ../woo-variation-swatches-pro/includes/hooks.php:678
+msgid "First attribute"
+msgstr ""
+
+#: ../includes/hooks.php:679, ../woo-variation-swatches-pro/includes/hooks.php:679
+msgid "Maximum attribute"
+msgstr ""
+
+#: ../includes/hooks.php:680, ../woo-variation-swatches-pro/includes/hooks.php:680
+msgid "Minimum attribute"
+msgstr ""
+
+#: ../includes/hooks.php:695, ../woo-variation-swatches-pro/includes/hooks.php:695
+msgid "Disable ajax threshold"
+msgstr ""
+
+#: ../includes/hooks.php:696, ../woo-variation-swatches-pro/includes/hooks.php:696
+msgid "Disable ajax variation threshold to make all variation work like non ajax style."
+msgstr ""
+
+#: ../includes/hooks.php:702, ../woo-variation-swatches-pro/includes/hooks.php:702
+msgid "Disable Out of stock"
+msgstr ""
+
+#: ../includes/hooks.php:703, ../woo-variation-swatches-pro/includes/hooks.php:703
+msgid "Disable out of stock attribute variations"
+msgstr ""
+
+#: ../includes/hooks.php:710, ../woo-variation-swatches-pro/includes/hooks.php:710
+msgid "Generate variation url"
+msgstr ""
+
+#: ../includes/hooks.php:711, ../woo-variation-swatches-pro/includes/hooks.php:711
+msgid "Generate sharable url based on selected variation attributes."
+msgstr ""
+
+#: ../includes/hooks.php:719, ../woo-variation-swatches-pro/includes/hooks.php:719
+msgid "Variation stock info"
+msgstr ""
+
+#: ../includes/hooks.php:720, ../woo-variation-swatches-pro/includes/hooks.php:720
+msgid "Show variation product stock info"
+msgstr ""
+
+#: ../includes/hooks.php:728, ../woo-variation-swatches-pro/includes/hooks.php:728
+msgid "Minimum stock threshold"
+msgstr ""
+
+#: ../includes/hooks.php:729, ../woo-variation-swatches-pro/includes/hooks.php:729
+msgid "When stock reaches this amount stock label will be shown."
+msgstr ""
+
+#: ../includes/hooks.php:914, ../woo-variation-swatches-pro/includes/hooks.php:914
+msgid "%s left"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:18, ../includes/html-product-attribute.php:110, ../woo-variation-swatches-pro/includes/html-product-attribute.php:18, ../woo-variation-swatches-pro/includes/html-product-attribute.php:110
+msgid "Click to toggle"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:21, ../woo-variation-swatches-pro/includes/html-product-attribute.php:21
+msgid "Attribute Type"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:40, ../woo-variation-swatches-pro/includes/html-product-attribute.php:40
+msgid "Shape style"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:45, ../woo-variation-swatches-pro/includes/html-product-attribute.php:45
+msgid "Rounded Shape"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:46, ../woo-variation-swatches-pro/includes/html-product-attribute.php:46
+msgid "Squared Shape"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:57, ../woo-variation-swatches-pro/includes/html-product-attribute.php:57
+msgid "Hide"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:65, ../woo-variation-swatches-pro/includes/html-product-attribute.php:65
+msgid "Attribute image size"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:113, ../woo-variation-swatches-pro/includes/html-product-attribute.php:113
+msgid "Type"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:150, ../woo-variation-swatches-pro/includes/html-product-attribute.php:150
+msgid "Tooltip Text"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:158, ../woo-variation-swatches-pro/includes/html-product-attribute.php:158
+msgid "Tooltip Image"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:168, ../includes/html-product-attribute.php:185, ../woo-variation-swatches-pro/includes/html-product-attribute.php:168, ../woo-variation-swatches-pro/includes/html-product-attribute.php:185
+msgid "Upload / Add image"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:169, ../includes/html-product-attribute.php:186, ../woo-variation-swatches-pro/includes/html-product-attribute.php:169, ../woo-variation-swatches-pro/includes/html-product-attribute.php:186
+msgid "Remove image"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:176, ../woo-variation-swatches-pro/includes/html-product-attribute.php:176
+msgid "Choose Image"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:193, ../woo-variation-swatches-pro/includes/html-product-attribute.php:193
+msgid "Color"
+msgstr ""
+
+#: ../includes/html-product-attribute.php:202, ../woo-variation-swatches-pro/includes/html-product-attribute.php:202
+msgid "Is dual color"
+msgstr ""
+
+#: ../includes/themes-support.php:890, ../includes/themes-support.php:919, ../woo-variation-swatches-pro/includes/themes-support.php:890, ../woo-variation-swatches-pro/includes/themes-support.php:919
+msgid "Select options"
+msgstr ""
+
+#: ../includes/themes-support.php:898, ../includes/themes-support.php:925, ../woo-variation-swatches-pro/includes/themes-support.php:898, ../woo-variation-swatches-pro/includes/themes-support.php:925
+msgid "Add to cart"
+msgstr ""
+
+#: ../woo-variation-swatches-pro/woo-variation-swatches-pro.php:246, ../woo-variation-swatches-pro.php:246
+msgid "Are you sure you want to reset it to default setting?"
+msgstr ""
+
+#: ../woo-variation-swatches-pro/woo-variation-swatches-pro.php:284, ../woo-variation-swatches-pro.php:284
+msgid "Variation Swatches for WooCommerce"
+msgstr ""
+
+#: ../woo-variation-swatches-pro/woo-variation-swatches-pro.php:292, ../woo-variation-swatches-pro.php:292
+msgid "<strong>Variation Swatches for WooCommerce - Pro</strong> is an add-on of "
+msgstr ""

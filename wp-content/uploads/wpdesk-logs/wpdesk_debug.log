@@ -1,0 +1,2 @@
+[2020-12-08 17:49:37] wpdesk.DEBUG: Sender payload: {"click_action":"plugin_deactivation","plugin":"flexible-checkout-fields\/flexible-checkout-fields.php","plugin_name":"Flexible Checkout Fields","reason":"other"} {"source":"wpdesk-sender"} []
+[2020-12-08 17:49:39] wpdesk.DEBUG: Sender response: {"headers":[],"body":"","response":{"code":false,"message":false},"cookies":[],"http_response":null} {"source":"wpdesk-sender"} []

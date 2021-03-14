@@ -1,0 +1,356 @@
+/* Main Body */
+@page {
+	margin-top: 1cm;
+	margin-bottom: 3cm;
+	margin-left: 2cm;
+	margin-right: 2cm;
+	direction: rtl;
+}
+/* Load font */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Cairo'), local('Cairo'), url(<?php echo $this->get_template_path(); ?>/fonts/Cairo-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Cairo Bold'), local('Cairo-Bold'), url(<?php echo $this->get_template_path(); ?>/fonts/Cairo-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Cairo';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Cairo Italic'), local('Cairo-Italic'), url(<?php echo $this->get_template_path(); ?>/fonts/Cairo-SemiBold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Cairo';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Cairo Bold Italic'), local('Cairo-BoldItalic'), url(<?php echo $this->get_template_path(); ?>/fonts/Cairo-Black.ttf) format('truetype');
+}
+
+body {
+	direction: rtl;
+	background: #fff;
+	color: #000;
+	margin: 0.5cm;
+	font-family: 'Cairo', sans-serif;
+	font-size: 10pt;
+	line-height: 150%; /* fixes inherit dompdf bug */
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+	margin: 0;
+	font-family: 'Cairo', sans-serif;
+}
+
+h1 {
+	font-size: 16pt;
+	margin: 5mm 0;
+	font-family: 'Cairo', sans-serif;
+}
+
+h2 {
+	font-size: 14pt;
+	font-family: 'Cairo', sans-serif;
+}
+
+h3, h4 {
+	font-size: 9pt;
+	font-family: 'Cairo', sans-serif;
+}
+
+
+ol,
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-family: 'Cairo', sans-serif;
+}
+
+li,
+ul {
+	margin-bottom: 0.75em;
+	font-family: 'Cairo', sans-serif;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	font-family: 'Cairo', sans-serif;
+}
+
+p + p {
+	margin-top: 1.25em;
+	font-family: 'Cairo', sans-serif;
+}
+
+a { 
+	border-bottom: 1px solid; 
+	text-decoration: none; 
+	font-family: 'Cairo', sans-serif;
+}
+
+/* Basic Table Styling */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	page-break-inside: always;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	direction: rtl;
+	font-family: 'Cairo', sans-serif;
+
+}
+
+th, td {
+	vertical-align: top;
+	text-align: right;
+	font-family: 'Cairo', sans-serif;
+}
+
+table.container {
+	width:100%;
+	border: 0;
+	direction: rtl;
+	font-family: 'Cairo', sans-serif;
+}
+
+tr.no-borders,
+td.no-borders {
+	border: 0 !important;
+	border-top: 0 !important;
+	border-bottom: 0 !important;
+	padding: 0 !important;
+	width: auto;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* Header */
+table.head {
+	margin-bottom: 12mm;
+	font-family: 'Cairo', sans-serif;
+}
+
+td.header img {
+	/* img width & heights can only be set with inline styles (mpdf 8.0) https://github.com/mpdf/mpdf/issues/366 */
+	/* using wpo_wcpdf_header_logo_img_element filter instead in wcpdf-mpdf.php */
+	  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+td.header {
+	font-size: 16pt;
+	font-weight: 700;
+	font-family: 'Cairo', sans-serif;
+}
+
+td.shop-info {
+	width: 40%;
+	font-family: 'Cairo', sans-serif;
+}
+.document-type-label {
+	text-transform: uppercase;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* Recipient addressses & order data */
+table.order-data-addresses {
+	width: 100%;
+	margin-bottom: 10mm;
+	font-family: 'Cairo', sans-serif;
+}
+
+td.order-data {
+	width: 40%;
+	font-family: 'Cairo', sans-serif;
+}
+
+.invoice .shipping-address {
+	width: 30%;
+	font-family: 'Cairo', sans-serif;
+}
+
+.packing-slip .billing-address {
+	width: 30%;
+	font-family: 'Cairo', sans-serif;
+}
+
+td.order-data table th {
+	font-weight: normal;
+	padding-right: 2mm;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* Order details */
+table.notes-totals,
+table.order-details {
+	width:100%;
+	margin-bottom: 8mm;
+	direction: rtl;
+	font-family: 'Cairo', sans-serif;
+}
+
+.quantity,
+.price {
+	width: 20%;
+	font-family: 'Cairo', sans-serif;
+}
+
+.order-details tr,
+.notes-totals tr {
+	page-break-inside: always;
+	page-break-after: auto;	
+	font-family: 'Cairo', sans-serif;
+}
+
+.notes-totals td,
+.notes-totals th,
+.order-details td,
+.order-details th {
+	border-bottom: 1px #ccc solid;
+	border-top: 1px #ccc solid;
+	padding: 0.375em;
+	font-family: 'Cairo', sans-serif;
+}
+
+.notes-totals th,
+.order-details th {
+	font-weight: bold;
+	text-align: right;
+	font-family: 'Cairo', sans-serif;
+}
+
+.order-details thead th {
+	color: white;
+	background-color: #361347;
+	border-color: #361347;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* product bundles compatibility */
+.order-details tr.bundled-item td.product {
+	padding-left: 5mm;
+	font-family: 'Cairo', sans-serif;
+}
+
+.order-details tr.product-bundle td,
+.order-details tr.bundled-item td {
+	border: 0;
+	font-family: 'Cairo', sans-serif;
+}
+
+.order-details tr.bundled-item.hidden {
+	display: none;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* item meta formatting for WC2.6 and older */
+dl {
+	margin: 4px 0;
+	font-family: 'Cairo', sans-serif;
+}
+
+dt, dd, dd p {
+	display: inline;
+	font-size: 7pt;
+	line-height: 7pt;
+	font-family: 'Cairo', sans-serif;
+}
+
+dd {
+	margin-left: 5px;
+	font-family: 'Cairo', sans-serif;
+}
+
+dd:after {
+	content: "\A";
+	white-space: pre;
+	font-family: 'Cairo', sans-serif;
+}
+/* item-meta formatting for WC3.0+ */
+.wc-item-meta, ul.meta {
+	margin: 4px 0;
+	font-size: 7pt;
+	line-height: 7pt;
+	font-family: 'Cairo', sans-serif;
+}
+.wc-item-meta p, ul.meta p {
+	display: inline;
+	font-family: 'Cairo', sans-serif;
+}
+.wc-item-meta li, ul.meta li {
+	margin: 0;
+	margin-left: 5px;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* Notes & Totals */
+.customer-notes {
+	margin-top: 5mm;
+	font-family: 'Cairo', sans-serif;
+}
+
+table.totals {
+	width: 100%;
+	font-family: 'Cairo', sans-serif;
+}
+
+table.totals th,
+table.totals td {
+	border: 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-family: 'Cairo', sans-serif;
+}
+
+table.totals th.description,
+table.totals td.price {
+	width: 50%;
+	font-family: 'Cairo', sans-serif;
+}
+
+table.totals tr.order_total td,
+table.totals tr.order_total th {
+	border-top: 2px solid #361347;
+	border-bottom: 2px solid #361347;
+	font-weight: bold;
+	font-family: 'Cairo', sans-serif;
+}
+
+table.totals tr.payment_method {
+	display: none;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* Footer Imprint */
+#footer {
+	position: inherit;
+	bottom: 0;
+	left: 2cm;
+	right: 2cm;
+	height: auto; /* if you change the footer height, don't forget to change the bottom (=negative height) and the @page margin-bottom as well! */
+	text-align: center;
+	border-top: 0.1mm solid gray;
+	margin-top:1cm;
+	margin-bottom: 0;
+	padding-top: 2mm;
+	font-family: 'Cairo', sans-serif;
+}
+
+/* page numbers */
+.pagenum:before {
+	content: counter(page);
+	font-family: 'Cairo', sans-serif;
+}
+.pagenum,.pagecount {
+	font-family: 'Cairo', sans-serif;
+}
